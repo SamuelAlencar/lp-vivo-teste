@@ -54,7 +54,7 @@ const Carousel = () => {
   const settings = {
     className: "center ",
     centerMode: true,
-    centerPadding: "50px",
+    centerPadding: "10px",
     dots: true,
     infinite: true,
     speed: 500,
@@ -94,7 +94,7 @@ const Carousel = () => {
       {
         breakpoint: 480,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
@@ -103,7 +103,7 @@ const Carousel = () => {
 
   return (
     <div >
-      <h3 className="text-2xl md:pt-14 md:pl-24"  >Tecnologias</h3>
+      <h3 className="text-2xl pt-6 md:pt-14 pl-12 pb-6 md:pl-24"  >Tecnologias</h3>
       <div className="mx-auto max-w-[600px]">
         <Slider {...settings} className="slider-container">
           <div>
