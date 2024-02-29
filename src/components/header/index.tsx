@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-[#FFFAFA] drop-shadow-md h-20 pl-8 pt-3 pb-4">
+      <header className="bg-[#FFFAFA] drop-shadow-md h-20 pl-8 pt-3 pb-4 z-50">
         <div className="flex flex-row justify-start ">
           <IconMenu onClick={toggleMenu} isOpen={isMenuOpen}/>
           <div className="pl-6">
