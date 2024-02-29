@@ -46,8 +46,11 @@ Este projeto é uma aplicação [Next.js](https://nextjs.org/), versão 0.1.0, d
 
 ## Testes
 
-- Execute testes end-to-end com Cypress: `pnpm test`
+- Execute testes end-to-end com Cypress: `pnpm cypress open`
 
 Sinta-se à vontade para explorar e aprimorar o projeto de acordo com seus requisitos de desenvolvimento.
 
 Feliz codificação!
+
+##FEITO COM CARINHO POR 
+#Samuel alencar -  WebDeveloper (https://samuel-alencar-portifolio.vercel.app/)
