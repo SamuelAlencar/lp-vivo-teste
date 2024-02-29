@@ -9,7 +9,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsMenuOpen((prevState) => !prevState);
   };
 
   return (
@@ -20,7 +20,7 @@ const Header = () => {
           <div className="pl-6">
             <Image
               src={imageLogo}
-              alt={"Logo"}
+              alt="Logo"
               width={150}
               height={56}
               quality={100}
