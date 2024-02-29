@@ -15,7 +15,7 @@ function NextArrow(props: { className: any; style: any; onClick: any }) {
   return (
     <Image
       className={className}
-      style={{ ...style, display: "block", width: "auto", height: "auto" }}
+      style={{ ...style, display: "block", width: "auto", right: "10px", height: "auto", zIndex:"49" }}
       onClick={onClick}
       src={arrowRight}
       alt={"arrowRight"}
@@ -28,7 +28,7 @@ function PrevArrow(props: { className: any; style: any; onClick: any }) {
   return (
     <Image
       className={className}
-      style={{ ...style, display: "block", width: "auto", height: "auto" }}
+      style={{ ...style, display: "block", left: "10px", width:"auto", height: "auto", zIndex:"49"  }}
       onClick={onClick}
       src={arrowLeft}
       alt={"arrowRight"}
@@ -75,21 +75,24 @@ const Carousel = () => {
       {
         breakpoint: 1024,
         settings: {
-          centerPadding: "30px",
-          slidesToShow: 2,
+          centerPadding: "140px",
+          slidesToShow: 1,
           slidesToScroll: 2,
-          infinite: true,
+          infinite: false,
           dots: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          centerPadding: "10px",
-          slidesToShow: 2,
+          centerPadding: "140px",
+          className: "center",
+          centerMode: true,          
+          slidesToShow: 1,
           slidesToScroll: 2,
           initialSlide: 2,
-          infinite: true,
+          infinite: false,
+          dots: true,
         },
       },
       {
@@ -97,11 +100,11 @@ const Carousel = () => {
         settings: {
           className: "center",
           centerMode: true,
-          centerPadding: "10px",
+          centerPadding: "100px",
           dots: true,
-          infinite: true,
-          slidesToShow: 2,
-          slidesToScroll: 2,
+          infinite: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
     ],
@@ -129,7 +132,7 @@ const Carousel = () => {
   );
 
   return (
-    <div>
+    <div id="carousel">
       <h3 className="text-2xl pt-6 md:pt-14 pl-12 pb-6 md:pl-24">
         Tecnologias
       </h3>

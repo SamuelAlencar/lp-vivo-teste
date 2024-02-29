@@ -28,6 +28,7 @@ body {
   width: 70px;
   height: 88px;
 }
+
 .slick-slide > div > div > p {
   opacity: 0;
   transition: opacity 0.3s ease;
