@@ -53,4 +53,4 @@ Sinta-se à vontade para explorar e aprimorar o projeto de acordo com seus requi
 Feliz codificação!
 
 ## FEITO COM CARINHO POR 
-# Samuel alencar -  WebDeveloper (https://img.shields.io/badge/React-%5E18-blue)
+# Samuel alencar -  WebDeveloper (https://samuel-alencar-portifolio.vercel.app/)
