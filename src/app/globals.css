@@ -3,7 +3,39 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: bold;
-    height: 100vh;
-  }
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  height: 100vh;
+}
+
+.slick-slide.slick-current > div, .slick-slide > div {
+  display: flex;
+  justify-content: center;
+}
+
+.slick-slide.slick-current > div > div {
+  background-color: #660099;
+  width: 122px;
+  height: 150px;
+  -webkit-box-shadow: 3px 4px 5px 1px rgba(0,0,0,0.46);
+  -moz-box-shadow: 3px 4px 5px 1px rgba(0,0,0,0.46);
+  box-shadow: 3px 4px 5px 1px rgba(0,0,0,0.46);
+  margin-bottom: 10px;
+}
+
+
+.slick-slide > div > div {
+  width: 70px;
+  height: 88px;
+}
+.slick-slide > div > div > p {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+}
+
+.slick-slide.slick-current > div > div > p {
+  opacity: 1;
+  font-size: 18px;
+  color: #fff;
+}
