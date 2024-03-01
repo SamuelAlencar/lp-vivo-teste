@@ -10,7 +10,7 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ speed, specialOffer }) => {
   return (
-    <div className="w-[300px] md:w-[236px] rounded-lg drop-shadow-md bg-[#FFFAFA] mx-12 md:mx-4 my-12 md:my-4">
+    <div data-testid="card" className="w-[300px] md:w-[236px] rounded-lg drop-shadow-md bg-[#FFFAFA] mx-12 md:mx-4 my-12 md:my-4">
       {specialOffer && (
         <div className="w-full flex justify-center">
           <span className="absolute top-[-20px] text-[10px] bg-[#CD9EE6] font-black py-1 px-2 rounded-lg pt-[-10px] tracking-[.25em]">
