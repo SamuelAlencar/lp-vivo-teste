@@ -13,19 +13,19 @@ const Card: React.FC<CardProps> = ({ speed, specialOffer }) => {
     <div className="w-[300px] md:w-[236px] rounded-lg drop-shadow-md bg-[#FFFAFA] mx-12 md:mx-4 my-12 md:my-4">
       {specialOffer && (
         <div className="w-full flex justify-center">
-          <span className="absolute top-[-20px] text-sm bg-[#CD9EE6] font-bold py-1 px-2 rounded-lg pt-[-10px] tracking-wide">
+          <span className="absolute top-[-20px] text-[10px] bg-[#CD9EE6] font-black py-1 px-2 rounded-lg pt-[-10px] tracking-[.25em]">
             {specialOffer}
           </span>
         </div>
       )}
-      <div className="flex flex-row justify-evenly px-5 pt-5">
-        <Image src={WiFiIcon} alt={"WiFiIcon"} width={44} height={18} />
-        <span className="text-2xl text-[#660099] font-bold tracking-wide">
+      <div className="flex flex-row justify-between px-5 pt-5">
+        <Image src={WiFiIcon} alt={"WiFiIcon"} width={34} height={24} className="h-full	" />
+        <span className="text-[24px] text-[#660099] font-black tracking-[.1em]">
           {speed} Mega
         </span>
       </div>
-      <div className="flex flex-row justify-end pr-10">
-        <span className="text-xs text-[#660099] leading-8">
+      <div className="flex flex-row justify-end pr-6">
+        <span className="text-[9px] text-[#660099] leading-8 tracking-[.125em]">
           +Wi-fi e Modem grátis
         </span>
       </div>

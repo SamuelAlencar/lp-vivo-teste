@@ -5,6 +5,7 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
+  font-smooth: always;  
   height: 100vh;
 }
 
@@ -39,4 +40,8 @@ body {
   opacity: 1;
   font-size: 18px;
   color: #fff;
+}
+
+.slick-disabled{
+  opacity: 0;
 }

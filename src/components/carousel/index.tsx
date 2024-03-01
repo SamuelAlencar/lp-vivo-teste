@@ -58,7 +58,7 @@ const Carousel = () => {
   const settings = {
     className: "center",
     centerMode: true,
-    centerPadding: "150px",
+    centerPadding: "160px",
     dots: false,
     infinite: false,
     speed: 500,
