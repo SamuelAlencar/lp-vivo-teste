@@ -9,6 +9,8 @@ body {
   height: 100vh;
 }
 
+/** Custom Css for carousel **/
+
 .slick-slide.slick-current > div, .slick-slide > div {
   display: flex;
   justify-content: center;
@@ -44,4 +46,43 @@ body {
 
 .slick-disabled{
   opacity: 0;
+}
+
+/** Custom css for scroll **
+
+/* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
+/** {
+  scrollbar-width: thin;
+  scrollbar-color: #8A8A8A #DFE9EB;
+}*/
+
+/* Chrome, Edge and Safari */
+*::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #DFE9EB;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #B8C0C2;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: #8A8A8A;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #9C9C9C;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #CCCCCC;
 }

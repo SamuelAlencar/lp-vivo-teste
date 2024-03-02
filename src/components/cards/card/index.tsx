@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import WiFiIcon from "../../../../public/wifi-icon.png";
+import WiFiIcon from "public/wifi-icon.png"
 import Link from "next/link";
 
 interface CardProps {

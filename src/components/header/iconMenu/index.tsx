@@ -1,6 +1,5 @@
-
 'use client'
-import React, { MouseEventHandler } from "react";
+import React, { MouseEventHandler, useState } from "react";
 
 interface IconMenuProps {
   onClick: MouseEventHandler<HTMLButtonElement>;
@@ -8,34 +7,46 @@ interface IconMenuProps {
 }
 
 const IconMenu: React.FC<IconMenuProps> = ({ onClick, isOpen }) => {
-  const iconSize = isOpen ? 26 : 21;
-  const iconLines = isOpen ? (
-    <path d="M2 2L24 24M2 24L24 2" stroke="#660099" strokeWidth="3" />
-  ) : (
-    <>
-      <line x1="1.5" y1="4.5" x2="30.5" y2="4.5" stroke="#660099" strokeWidth="3" />
-      <line x1="1.5" y1="10.5" x2="30.5" y2="10.5" stroke="#660099" strokeWidth="3" />
-      <line x1="1.5" y1="16.5" x2="30.5" y2="16.5" stroke="#660099" strokeWidth="3" />
-    </>
-  );
+  const iconSize = 40;
+  // const iconSize = isOpen ? baseIconSize * 1.0 : baseIconSize;
+
+  const [isClosed, setIsClosed] = useState(false);
+
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (event) => {
+    setIsClosed(!isClosed);
+    onClick(event);
+  };
 
   return (
     <button
-      className={`flex flex-col focus:outline-none justify-center w-[32px] h-[56px] transition-transform transform ${
-        isOpen ? "rotate-90" : "rotate-0"
+      className={`flex items-center justify-center focus:outline-none transition-transform transform ${
+        isOpen || isClosed ? "rotate-45" : "rotate-0" 
       }`}
-      onClick={onClick}
+      onClick={handleClick}
     >
-      <span className={`pt-0.5 pb-0.5 opacity-100 transition-opacity`}>
+      <span className={`opacity-100 transition-opacity layout="responsive"`}>
         <svg
           width={iconSize}
           height={iconSize}
-          viewBox={`0 0 ${iconSize} ${iconSize}`}
+          viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="transition-transform transform rotate-0"
+          className={`transition-transform transform ${isOpen || isClosed ? "rotate-45" : "rotate-0"}`}
         >
-          {iconLines}
+          {isClosed ? (
+            <>
+              <path d="M6 6L18 18" stroke="#660099" strokeWidth="2" strokeLinecap="round" />
+              <path d="M6 18L18 6" stroke="#660099" strokeWidth="2" strokeLinecap="round" />
+            </>
+          ) : (
+            <path
+              d={isOpen ? "M6 18L18 6" : "M4 6H20M4 12H20M4 18H20"}
+              stroke="#660099"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          )}
         </svg>
       </span>
     </button>
