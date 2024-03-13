@@ -1,0 +1,42 @@
+{
+    "discovery": [
+        {
+            "id":1,
+            "parent": "simCard",
+            "icon":"/wifi-icon.png",
+            "title": "200 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "specialFlag": ""
+        },
+        {
+            "id":2,
+            "parent": "Esim",
+            "icon":"/wifi-icon.png",
+            "title": "300 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "urlImage": "/card-icon-esim.png",
+            "specialFlag": "OFERTA ESPECIAL"
+        },
+        {
+            "id":3,
+            "parent": "5G",
+            "icon":"/wifi-icon.png",
+            "title": "600 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "urlImage": "/card-icon-esim.png",
+            "specialFlag": "MELHOR CUSTO BENEFÍCIO"
+        }
+    ]
+}

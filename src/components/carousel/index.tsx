@@ -1,135 +1,120 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
+import Skeleton from "react-loading-skeleton";
+import { api } from "@/data/api";
+import { techsTypes } from "@/data/types/techs";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import arrowLeft from "../../../public/arrow-left.png";
-import arrowRight from "../../../public/arrow-right.png";
-import imageSIMCard from "../../../public/card-icon-simcard.png";
-import imageEsim from "../../../public/card-icon-esim.png";
-import image5G from "../../../public/card-icon-5g.png";
 
-function NextArrow(props: { className: any; style: any; onClick: any }) {
+interface ArrowsProps {
+  className?: string;
+  style?: React.CSSProperties;
+  onClick?: React.MouseEventHandler<HTMLImageElement>;
+}
+
+async function getTechs() {
+  const response = await api("/techs");
+  const techs = await response.json();
+  return techs;
+}
+
+function PrevArrow(props: ArrowsProps) {
   const { className, style, onClick } = props;
   return (
     <Image
       className={className}
-      style={{ ...style, display: "block", width: "auto", right: "10px", height: "auto", zIndex:"49" }}
+      style={{
+        ...style,
+        width: "12px",
+        height: "20px",
+        backgroundColor: "rgba(0,0,0,0)",
+      }}
       onClick={onClick}
-      src={arrowRight}
-      alt={"arrowRight"}
+      src={"/arrow-left.png"}
+      alt={"arrowLeft"}
+      width={12}
+      height={20}
     />
   );
 }
-
-function PrevArrow(props: { className: any; style: any; onClick: any }) {
+function NextArrow(props: ArrowsProps) {
   const { className, style, onClick } = props;
   return (
     <Image
       className={className}
-      style={{ ...style, display: "block", left: "10px", width:"auto", height: "auto", zIndex:"49"  }}
+      style={{
+        ...style,
+        width: "12px",
+        height: "20px",
+        backgroundColor: "rgba(0,0,0,0)",
+      }}
       onClick={onClick}
-      src={arrowLeft}
+      src={"/arrow-right.png"}
       alt={"arrowRight"}
+      width={24}
+      height={40}
     />
   );
 }
 
-const Arrow: React.FC<{
-  className: string;
-  style: React.CSSProperties;
-  onClick: React.MouseEventHandler<HTMLDivElement>;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-}> = ({ className, style, onClick, src, alt, width, height }) => (
-  <div
-    className={className}
-    style={{ ...style, display: "block" }}
-    onClick={onClick}
-  >
-    <Image src={src} alt={alt} width={width} height={height} quality={100} />
-  </div>
-);
+const DynamicCarousel = () => {
+  const [techs, setTechs] = useState<techsTypes[]>([]);
+  const [loading, setLoading] = useState(true);
 
-const Carousel = () => {
+  useEffect(() => {
+    async function fetchData() {
+      const techsData = await getTechs();
+      setTechs(techsData);
+      setLoading(false);
+    }
+    fetchData();
+  }, []);
+
   const settings = {
+    focusOnSelect: true,
     className: "center",
     centerMode: true,
-    centerPadding: "160px",
-    dots: false,
     infinite: false,
-    speed: 500,
+    centerPadding: "160px",
     slidesToShow: 1,
-    initialSlide: 2,
-    nextArrow: (
-      <NextArrow className={undefined} style={undefined} onClick={undefined} />
-    ),
-    prevArrow: (
-      <PrevArrow className={undefined} style={undefined} onClick={undefined} />
-    ),
-    focusOnSelect: true,
+    speed: 500,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
+    dots: true,
+    initialSlide: 1,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          centerPadding: "140px",
-          slidesToShow: 1,
-          slidesToScroll: 2,
+          focusOnSelect: true,
+          className: "center",
+          centerMode: true,
           infinite: false,
+          centerPadding: "160px",
+          slidesToShow: 1,
+          speed: 500,
+          nextArrow: <NextArrow />,
+          prevArrow: <PrevArrow />,
           dots: true,
+          initialSlide: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          centerPadding: "140px",
-          className: "center",
-          centerMode: true,          
-          slidesToShow: 1,
-          slidesToScroll: 2,
-          initialSlide: 2,
-          infinite: false,
-          dots: true,
+          centerPadding: "160px",
         },
       },
       {
         breakpoint: 480,
         settings: {
-          className: "center",
-          centerMode: true,
           centerPadding: "100px",
-          dots: true,
-          infinite: false,
-          slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],
   };
-
-  const Card: React.FC<{
-    title: string;
-    src: any;
-    alt: string;
-    width: number;
-    height: number;
-  }> = ({ title, src, alt, width, height }) => (
-    <div className="w-[70px] h-[88px] bg-[#660099] bg-opacity-30 rounded-lg flex flex-col items-center justify-around drop-shadow-md">
-      <p>{title}</p>
-      <div>
-        <Image
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
-          quality={100}
-        />
-      </div>
-    </div>
-  );
 
   return (
     <div id="carousel">
@@ -137,26 +122,47 @@ const Carousel = () => {
         Tecnologias
       </h3>
       <div className="mx-auto max-w-[480px]">
-        <Slider {...settings} className="slider-container">
-          <Card
-            title="simCard"
-            src={imageSIMCard}
-            alt="imageSIMCard"
-            width={46}
-            height={38}
-          />
-          <Card
-            title="Esim"
-            src={imageEsim}
-            alt="imageEsim"
-            width={52}
-            height={48}
-          />
-          <Card title="5G" src={image5G} alt="image5G" width={25} height={20} />
-        </Slider>
+        {loading ? (
+          <div className="flex flex-row w-[480px] h-[150px]">
+            <div
+              className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md bg-violet-600 opacity-3 animate-pulse w-[70px] h-[88px]`}
+            ></div>
+            <div
+              className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md bg-[#660099] animate-pulse w-[122px] h-[150px]`}
+            ></div>
+            <div
+              className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md bg-violet-600 opacity-3 animate-pulse w-[70px] h-[88px]`}
+            ></div>
+          </div>
+        ) : (
+          <div className="slider-container">
+            <Slider {...settings}>
+              {techs.map((tech: techsTypes) => {
+                return (
+                  <div key={tech.id}>
+                    <div
+                      className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md cursor-pointer`}
+                    >
+                      <p className="text-white">{tech.title}</p>
+                      <div>
+                        <Image
+                          src={tech?.urlImage}
+                          alt={tech?.title}
+                          width={tech?.width}
+                          height={tech?.height}
+                          quality={100}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </Slider>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Carousel;
+export default DynamicCarousel;

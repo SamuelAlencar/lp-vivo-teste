@@ -1,0 +1,25 @@
+{
+    "techs": [
+        {
+            "id":1,
+            "title":"simCard",
+            "width": "40",
+            "height": "32",
+            "urlImage": "/card-icon-esim.png"
+        },
+        {
+            "id":2,
+            "title":"Esim",
+            "width": "40",
+            "height": "32",
+            "urlImage": "/card-icon-simcard.png"
+        },
+        {
+            "id":3,
+            "title":"5G",
+            "width": "40",
+            "height": "32",
+            "urlImage": "/card-icon-5g.png"
+        }
+    ]
+}
