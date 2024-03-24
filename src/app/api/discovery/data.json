@@ -4,6 +4,42 @@
             "id":1,
             "parent": "simCard",
             "icon":"/wifi-icon.png",
+            "title": "14 GIGAS",
+            "subtitle": "8GB + 6GB de bônus *",
+            "buttonText": "Contratar",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "specialFlag": ""
+        },
+        {
+            "id":2,
+            "parent": "simCard",
+            "icon":"/wifi-icon.png",
+            "title": "26 GIGAS",
+            "subtitle": "10GB + 6GB de bônus *",
+            "buttonText": "Contratar",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "specialFlag": "SEM FIDELIDADE"
+        },
+        {
+            "id":3,
+            "parent": "simCard",
+            "icon":"/wifi-icon.png",
+            "title": "26 GIGAS",
+            "subtitle": "10GB + 6GB de bônus *",
+            "buttonText": "Contratar",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "specialFlag": "SEM FIDELIDADE"
+        },
+        {
+            "id":4,
+            "parent": "Esim",
+            "icon":"/wifi-icon.png",
             "title": "200 Mega",
             "subtitle": "+Wi-fi e Modem grátis",
             "buttonText": "Consultar cobertura",
@@ -13,7 +49,7 @@
             "specialFlag": ""
         },
         {
-            "id":2,
+            "id":5,
             "parent": "Esim",
             "icon":"/wifi-icon.png",
             "title": "300 Mega",
@@ -26,8 +62,8 @@
             "specialFlag": "OFERTA ESPECIAL"
         },
         {
-            "id":3,
-            "parent": "5G",
+            "id":6,
+            "parent": "Esim",
             "icon":"/wifi-icon.png",
             "title": "600 Mega",
             "subtitle": "+Wi-fi e Modem grátis",
@@ -37,6 +73,44 @@
             "imageHeight": "26",
             "urlImage": "/card-icon-esim.png",
             "specialFlag": "MELHOR CUSTO BENEFÍCIO"
+        },
+        {
+            "id":7,
+            "parent": "5G",
+            "icon":"/wifi-icon.png",
+            "title": "200 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "specialFlag": ""
+        },
+        {
+            "id":8,
+            "parent": "5G",
+            "icon":"/wifi-icon.png",
+            "title": "300 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "urlImage": "/card-icon-esim.png",
+            "specialFlag": "OFERTA ESPECIAL"
+        },
+        {
+            "id":9,
+            "parent": "5G",
+            "icon":"/wifi-icon.png",
+            "title": "600 Mega",
+            "subtitle": "+Wi-fi e Modem grátis",
+            "buttonText": "Consultar cobertura",
+            "buttonLink": "/",
+            "imageWidth": "37",
+            "imageHeight": "26",
+            "urlImage": "/card-icon-esim.png",
+            "specialFlag": "OFERTA ESPECIAL"
         }
     ]
 }

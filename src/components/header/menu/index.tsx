@@ -5,7 +5,7 @@ interface MenuProps {
   isOpen: boolean;
 }
 const Menu: React.FC<MenuProps> = ({ isOpen }) => {
-  const containerClasses = `container max-w-[1005px] min-h-[105vh] bg-black bg-opacity-55 ${isOpen ? 'absolute' : 'hidden'} z-50 top-20`;
+  const containerClasses = `w-full bg-black bg-opacity-55 ${isOpen ? 'absolute' : 'hidden'} z-50 top-20`;
 
   useEffect(() => {
     if (isOpen) {

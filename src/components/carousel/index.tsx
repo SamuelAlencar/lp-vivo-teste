@@ -2,11 +2,12 @@
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import Image from "next/image";
-import Skeleton from "react-loading-skeleton";
+
 import { api } from "@/data/api";
 import { techsTypes } from "@/data/types/techs";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import useTechsStore from "@/store/useTechs";
 
 interface ArrowsProps {
   className?: string;
@@ -62,6 +63,8 @@ function NextArrow(props: ArrowsProps) {
 const DynamicCarousel = () => {
   const [techs, setTechs] = useState<techsTypes[]>([]);
   const [loading, setLoading] = useState(true);
+  const {title, setTitle} = useTechsStore()
+
 
   useEffect(() => {
     async function fetchData() {
@@ -71,6 +74,7 @@ const DynamicCarousel = () => {
     }
     fetchData();
   }, []);
+
 
   const settings = {
     focusOnSelect: true,
@@ -82,7 +86,7 @@ const DynamicCarousel = () => {
     speed: 500,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    dots: true,
+    dots: false,
     initialSlide: 1,
     responsive: [
       {
@@ -118,8 +122,8 @@ const DynamicCarousel = () => {
 
   return (
     <div id="carousel">
-      <h3 className="text-2xl pt-6 md:pt-14 pl-12 pb-6 md:pl-24">
-        Tecnologias
+      <h3 className="text-2xl pt-6 md:pt-14 pl-12 pb-6 md:pl-24 text-center">
+        Planos e Serviços Vivo para sua Empresa
       </h3>
       <div className="mx-auto max-w-[480px]">
         {loading ? (
@@ -139,7 +143,7 @@ const DynamicCarousel = () => {
             <Slider {...settings}>
               {techs.map((tech: techsTypes) => {
                 return (
-                  <div key={tech.id}>
+                  <div key={tech.id} data-title={tech.title} onClick={() => setTitle(tech.title)} >
                     <div
                       className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md cursor-pointer`}
                     >

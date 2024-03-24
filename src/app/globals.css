@@ -5,8 +5,11 @@
 body {
   font-family: "Poppins", sans-serif;
   font-weight: bold;
-  font-smooth: always;
   height: 100vh;
+  font-smooth: antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
 }
 
 .slick-slide > div > div > div{
@@ -36,8 +39,6 @@ body {
 .slick-slide.slick-active.slick-current.slick-center  > div > div > div > p{
   opacity: 1;
 }
-
-
 
 *::-webkit-scrollbar {
   height: 5px;

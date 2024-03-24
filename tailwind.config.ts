@@ -26,6 +26,8 @@ const config: Config = {
       center: true,
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 }
 export default config
