@@ -63,7 +63,7 @@ function NextArrow(props: ArrowsProps) {
 const DynamicCarousel = () => {
   const [techs, setTechs] = useState<techsTypes[]>([]);
   const [loading, setLoading] = useState(true);
-  const {title, setTitle} = useTechsStore()
+  const {setTitle} = useTechsStore()
 
 
   useEffect(() => {
@@ -143,7 +143,7 @@ const DynamicCarousel = () => {
             <Slider {...settings}>
               {techs.map((tech: techsTypes) => {
                 return (
-                  <div key={tech.id} data-title={tech.title} onClick={() => setTitle(tech.title)} >
+                  <div key={tech.id} data-title={tech.title} onClick={() => setTitle(tech.title)}  onChange={() => setTitle(tech.title)}>
                     <div
                       className={`mx-auto rounded-lg flex flex-col items-center justify-around drop-shadow-md cursor-pointer`}
                     >

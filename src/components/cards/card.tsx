@@ -66,8 +66,6 @@ const CardContainer: React.FC = () => {
   const [discoveryData, setDiscoveryData] = useState<discoveryTypes[]>([]);
   const selectedTechs = useTechsStore();
 
-  console.log(selectedTechs)
-
   useEffect(() => {
     async function fetchData() {
       const data = await fetchDiscoveryData();
