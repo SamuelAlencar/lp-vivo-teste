@@ -1,14 +1,16 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import Card from "./card";
-import CardLoading from "./cardLoading";
-import useTechsStore from "@/store/useTechs";
+import Card, { CardProps } from "./card";
+import CardLoading, { CardLoadingProps } from "./cardLoading";
+import useTechsStore, { TechsStore } from "@/store/useTechs";
 
-const Cards: React.FC = () => {
+interface CardsProps {}
+
+const Cards: React.FC<CardsProps> = () => {
   const [loaded, setLoaded] = useState<boolean>(false);
-  const titleTechs = useTechsStore();
+  const titleTechs: TechsStore = useTechsStore();
 
-  useEffect(() => {
+  useEffect((): void => {
     setLoaded(true);
   }, []);
 

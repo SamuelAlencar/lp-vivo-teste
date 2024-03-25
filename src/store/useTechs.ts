@@ -6,7 +6,7 @@ type useTechsStoreT = {
 };
 
 const useTechsStore = create<useTechsStoreT>()((set) => ({
-  title: "",
+  title: "Esim",
   setTitle: (newTitle) => set({ title: newTitle }),
 }));
 
