@@ -50,7 +50,7 @@ Este projeto é uma aplicação [Next.js](https://nextjs.org/), versão 0.1.0, d
 
 Sinta-se à vontade para explorar e aprimorar o projeto de acordo com seus requisitos de desenvolvimento.
 
-Feliz codificação!
+Feliz codificação!!!
 
 # FEITO COM CARINHO POR 
 ## Samuel alencar 
